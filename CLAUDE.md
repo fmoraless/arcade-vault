@@ -6,6 +6,10 @@ Este archivo proporciona orientación a Claude Code cuando se trabaja en este re
 
 ARCADE VAULT es un portal retro de videojuego, construido con Next.js 16 (App Router), React 19, TypeScript y Tailwind CSS v4. Es una aplicación estática-first con interacción cliente; las puntuaciones de invitados se guardan en `localStorage` y el README indica dónde conectar un backend (REST API o Supabase) para usuarios registrados — hoy no hay servidor.
 
+# Skills
+
+Usa siempre /frontend-design para diseñar la interfaz de usuario.
+
 ## Arquitectura
 
 - **Router**: `app/layout.tsx` es la raíz (usa `next/font/google`, importa `globals.css`, `<html lang="es">`); `app/page.tsx` es la página principal/biblioteca, que actualmente está en estado de plantilla y debe expandirse para cumplir el spec del README. Más pantallas (detalle, autenticación, salón de la fama) pueden añadirse como rutas nuevas bajo `app/`.
