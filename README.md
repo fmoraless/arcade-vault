@@ -92,3 +92,5 @@ Dark arcade cabinet theme. Deep black background (#0a0a0f) with neon accent colo
 - Fully responsive: mobile, tablet, desktop
 - Use Google Fonts: "Press Start 2P" + "Courier Prime"
 - All text content throughout the app must be in Spanish
+
+# Hola mundo
