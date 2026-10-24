@@ -1,6 +1,6 @@
 # SPEC 01 — Pantallas visuales del MVP de Arcade Vault
 
-> **Status:** Draft
+> **Status:** Aprobado
 > **Depends on:** Ninguna
 > **Date:** 2026-10-19
 > **Objective:** Desarrollar la parte visual del MVP de Arcade Vault con las pantallas de biblioteca, detalle del juego, reproductor, salón de la fama y autenticación, usando rutas de archivos de Next.js 16, componentes de React, datos mockeados y Tailwind CSS.
@@ -48,7 +48,10 @@ export type Game = {
 
 export const GAMES: Game[]; // 8 juegos (mismos datos de data.jsx)
 export const CATS: string[]; // ["TODOS", "ARCADE", "PUZZLE", "SHOOTER", "VERSUS"]
-export function seededScores(seed: number, count?: number): Array<{
+export function seededScores(
+  seed: number,
+  count?: number,
+): Array<{
   rank: number;
   name: string;
   score: number;
@@ -97,10 +100,10 @@ El estado de sesión y puntuaciones de invitado se lee/escribe en localStorage c
 
 ## Identified risks
 
-| Risk | Mitigation |
-|------|------------|
-| `localStorage` bloqueado en modo privado | Lectura/escritura envuelta en try/catch; la app sigue funcionando sin persistir |
-| Cambio de schema de datos mockeados | `seededScores` es determinista por seed; si el formato cambia, solo `lib/data.ts` se toca |
+| Risk                                      | Mitigation                                                                                             |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `localStorage` bloqueado en modo privado  | Lectura/escritura envuelta en try/catch; la app sigue funcionando sin persistir                        |
+| Cambio de schema de datos mockeados       | `seededScores` es determinista por seed; si el formato cambia, solo `lib/data.ts` se toca              |
 | Rutas dinámicas `[id]` con id inexistente | `GameDetail` devuelve `null` si no encuentra el juego; se muestra 404 suave o se redirige a biblioteca |
 
 ## What is **not** in this spec

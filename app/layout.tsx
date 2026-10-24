@@ -32,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
+      suppressHydrationWarning
       className={`${fontPixel.variable} ${fontMono.variable} ${fontCourier.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

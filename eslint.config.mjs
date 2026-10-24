@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Plantillas estáticas de referencia (legacy, fuera del árbol de producción):
+    "references/**",
   ]),
 ]);
 
