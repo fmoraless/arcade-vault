@@ -1,6 +1,6 @@
 # SPEC 01 — Pantallas visuales del MVP de Arcade Vault
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** Ninguna
 > **Date:** 2026-10-19
 > **Objective:** Desarrollar la parte visual del MVP de Arcade Vault con las pantallas de biblioteca, detalle del juego, reproductor, salón de la fama y autenticación, usando rutas de archivos de Next.js 16, componentes de React, datos mockeados y Tailwind CSS.
