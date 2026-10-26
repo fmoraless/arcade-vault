@@ -5,7 +5,7 @@ export type Game = {
   title: string;
   short: string;
   long: string;
-  cat: "ARCADE" | "PUZZLE" | "SHOOTER" | "VERSATUS" | "VERSUS";
+  cat: "ARCADE" | "PUZZLE" | "SHOOTER" | "VERSUS";
   cover: string;
   color: "cyan" | "magenta" | "yellow" | "green";
   best: number;
