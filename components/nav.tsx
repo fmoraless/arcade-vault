@@ -28,6 +28,7 @@ export default function Nav() {
     if (name === "games")
       return pathname === "/games" || pathname?.startsWith("/jugar");
     if (name === "auth") return pathname === "/auth";
+    if (name === "about") return pathname === "/about";
     return false;
   };
 
@@ -66,6 +67,12 @@ export default function Nav() {
             onClick={() => go("/salon")}
           >
             Salón de la Fama
+          </a>
+          <a
+            className={isActive("about") ? "active" : ""}
+            onClick={() => go("/about")}
+          >
+            Acerca de
           </a>
         </div>
         <div className="spacer"></div>
@@ -113,6 +120,12 @@ export default function Nav() {
           onClick={() => go("/salon")}
         >
           Salón de la Fama
+        </a>
+        <a
+          className={isActive("about") ? "active" : ""}
+          onClick={() => go("/about")}
+        >
+          Acerca de
         </a>
         {user ? (
           <a
