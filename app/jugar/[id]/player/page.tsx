@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 
 import { GAMES } from "@/lib/data";
@@ -26,10 +26,10 @@ function writeScores(scores: Array<{ game: string; score: number; name: string; 
   }
 }
 
-export default function GamePlayerPage({ params }: { params: Promise<{ id: string }> }) {
+export default function GamePlayerPage({ id }: { id: string }) {
   const router = useRouter();
-  const { id } = use(params);
-  const game = GAMES.find((g) => g.id === id);
+
+  const game = useMemo(() => GAMES.find((g) => g.id === id), [id]);
 
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(3);
@@ -141,45 +141,6 @@ export default function GamePlayerPage({ params }: { params: Promise<{ id: strin
             <span>CARGA · 1MB</span>
           </div>
         </div>
-
-        {over && (
-          <div className="modal-bd" onClick={() => {}}>
-            <div className="modal">
-              <h2>FIN DEL JUEGO</h2>
-              <div className="final-label">PUNTUACIÓN FINAL</div>
-              <div className="final">{score.toLocaleString("es-ES")}</div>
-              {!saved ? (
-                <>
-                  <div className="input-row">
-                    <input
-                      value={name}
-                      onChange={(e) =>
-                        setName(e.target.value.toUpperCase().slice(0, 10))
-                      }
-                      placeholder="TUS INICIALES"
-                    />
-                    <button className="btn yellow" onClick={handleSave}>
-                      GUARDAR PUNTUACIÓN
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <div className="toast-saved">▸ PUNTUACIÓN GUARDADA_</div>
-              )}
-              <div className="actions">
-                <button className="btn" onClick={restart}>
-                  JUGAR DE NUEVO
-                </button>
-                <button
-                  className="btn magenta"
-                  onClick={() => router.push("/")}
-                >
-                  VOLVER AL VAULT
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </main>
   );

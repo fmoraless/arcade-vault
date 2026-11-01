@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Press_Start_2P, JetBrains_Mono, Courier_Prime } from "next/font/google";
 import "./globals.css";
 
@@ -41,7 +42,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="av-bg" />
         <div className="av-noise" />
         <div id="root" className="flex flex-col flex-1">
-          <Nav />
+          <Suspense fallback={<nav className="av-nav" />}>
+            <Nav />
+          </Suspense>
           {children}
           <footer
             style={{
