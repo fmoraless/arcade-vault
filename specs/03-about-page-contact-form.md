@@ -1,6 +1,6 @@
 # SPEC 03 — About page con formulario de contacto y envío por Resend
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** SPEC 01 (01-pantallas-visuales-mvp.md), SPEC 02 (02-home-landing-page.md)
 > **Date:** 2026-11-01
 > **Objective:** Implementar la página "Acerca de" con formulario de contacto y envío de correo vía Resend, siguiendo el template exacto de references/home-about/about.jsx.
