@@ -25,7 +25,8 @@ export default function Nav() {
 
   const isActive = (name: string) => {
     if (name === "salon") return pathname === "/salon";
-    if (name === "games") return pathname === "/games" || pathname?.startsWith("/jugar");
+    if (name === "games")
+      return pathname === "/games" || pathname?.startsWith("/jugar");
     if (name === "auth") return pathname === "/auth";
     return false;
   };
@@ -68,11 +69,9 @@ export default function Nav() {
           </a>
         </div>
         <div className="spacer"></div>
-        <div
-          className="pixel"
-          style={{ fontSize: 9, color: "var(--ink-faint)", letterSpacing: "0.16em" }}
-        >
-          CRÉDITOS · 03
+        <div className="coin-counter">
+          <span className="coin"></span>
+          <span>CRÉDITOS · 03</span>
         </div>
         {user ? (
           <button className="btn ghost auth-btn" onClick={handleSignOut}>
@@ -97,28 +96,47 @@ export default function Nav() {
         onClick={() => setOpen(false)}
       ></div>
       <aside className={"av-mobile-panel" + (open ? " open" : "")}>
-        <div className="pixel neon-cyan" style={{ fontSize: 11, marginBottom: 16 }}>
+        <div
+          className="pixel neon-cyan"
+          style={{ fontSize: 11, marginBottom: 16 }}
+        >
           MENÚ
         </div>
-        <a className={isActive("games") ? "active" : ""} onClick={() => go("/games")}>
+        <a
+          className={isActive("games") ? "active" : ""}
+          onClick={() => go("/games")}
+        >
           Biblioteca
         </a>
-        <a className={isActive("salon") ? "active" : ""} onClick={() => go("/salon")}>
+        <a
+          className={isActive("salon") ? "active" : ""}
+          onClick={() => go("/salon")}
+        >
           Salón de la Fama
         </a>
         {user ? (
-          <a className={isActive("auth") ? "active" : ""} onClick={() => go("/auth")}>
+          <a
+            className={isActive("auth") ? "active" : ""}
+            onClick={() => go("/auth")}
+          >
             Cuenta
           </a>
         ) : (
-          <a className={isActive("auth") ? "active" : ""} onClick={() => go("/auth")}>
+          <a
+            className={isActive("auth") ? "active" : ""}
+            onClick={() => go("/auth")}
+          >
             Iniciar Sesión
           </a>
         )}
         <div style={{ flex: 1 }}></div>
         <div
           className="pixel"
-          style={{ fontSize: 9, color: "var(--ink-faint)", letterSpacing: "0.16em" }}
+          style={{
+            fontSize: 9,
+            color: "var(--ink-faint)",
+            letterSpacing: "0.16em",
+          }}
         >
           CRÉDITOS · 03
         </div>
