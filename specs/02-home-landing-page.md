@@ -1,6 +1,6 @@
 # SPEC 02 — Home page como landing de Arcade Vault
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** SPEC 01 (01-pantallas-visuales-mvp.md) — implementada
 > **Date:** 2026-10-31
 > **Objective:** Implementar la home page como landing page de Arcade Vault en `/`, diferenciada de la biblioteca (que se mueve a `/games`), con héroe, secciones de características, juegos disponibles, estadísticas, actividad en vivo, precios y CTA final, usando animaciones `reveal` del reference y componentes locales en `home/components/`.
