@@ -68,6 +68,12 @@ export default function Nav() {
           </a>
         </div>
         <div className="spacer"></div>
+        <div
+          className="pixel"
+          style={{ fontSize: 9, color: "var(--ink-faint)", letterSpacing: "0.16em" }}
+        >
+          CRÉDITOS · 03
+        </div>
         {user ? (
           <button className="btn ghost auth-btn" onClick={handleSignOut}>
             {user.name} ▾
